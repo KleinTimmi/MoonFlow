@@ -127,6 +127,7 @@ public enum IconCodePictureFont : ushort
 
     GlyphColon_IconBalloonHintArrow = 0x3A, // Colon replaced with the arrow in update 1.2.0+
     IconStarSmall = 0x3B, // v1.2.0+ only
+    IconInsigne = 0x3F, 
 
     IconCoin = 0x40,
     IconEarth = 0x41,
@@ -158,6 +159,9 @@ public enum IconCodePictureFont : ushort
     CoinCollectSky = 0x5A,
     CoinCollectMoon = 0x5B,
     CoinCollectPeach = 0x5C,
+    CoinCollectCarebean = 0x5D,
+    CoinCollectLuma = 0x5E,
+    CoinCollectCloud = 0x5F,
 
     TreasureRing = 0x60,
     TreasureFlower = 0x61,

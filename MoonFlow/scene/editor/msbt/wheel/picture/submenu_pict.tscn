@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://bbwcbxape7kyt"]
+[gd_scene load_steps=80 format=3 uid="uid://bbwcbxape7kyt"]
 
 [ext_resource type="Script" uid="uid://q76cug4d3jch" path="res://scene/editor/msbt/wheel/picture/TagSubmenuPictureFont.cs" id="1_2bwnk"]
 [ext_resource type="Theme" uid="uid://bbndf5ewp2sd1" path="res://asset/theme/msbt/msbt_editor_theme.tres" id="2_bxd02"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://biueg7nxh3jht" path="res://asset/nindot/lms/icon/PictureFont_46.png" id="16_vr1ru"]
 [ext_resource type="Texture2D" uid="uid://corhlxhr64e6" path="res://asset/nindot/lms/icon/PictureFont_4F.png" id="18_ygcni"]
 [ext_resource type="Texture2D" uid="uid://c46b3cvbfpybx" path="res://asset/nindot/lms/icon/PictureFont_30.png" id="20_i0ju6"]
+[ext_resource type="Texture2D" uid="uid://d2alruqngjwa3" path="res://asset/nindot/lms/icon/PictureFont_3F.png" id="21_l76lg"]
 [ext_resource type="Texture2D" uid="uid://2g01fvaywdt" path="res://asset/nindot/lms/icon/PictureFont_31.png" id="21_t3ix0"]
 [ext_resource type="Texture2D" uid="uid://c6vsbddcrhi2r" path="res://asset/nindot/lms/icon/PictureFont_32.png" id="22_ajn4x"]
 [ext_resource type="Texture2D" uid="uid://cojfxwfv1f811" path="res://asset/nindot/lms/icon/PictureFont_33.png" id="23_5re5o"]
@@ -68,8 +69,11 @@
 [ext_resource type="Texture2D" uid="uid://c347fnifrnjbt" path="res://asset/nindot/lms/icon/PictureFont_62.png" id="60_we171"]
 [ext_resource type="Texture2D" uid="uid://7y0f8nygbi2f" path="res://asset/nindot/lms/icon/PictureFont_63.png" id="61_lfmcn"]
 [ext_resource type="Texture2D" uid="uid://ypq31g0fwfp8" path="res://asset/nindot/lms/icon/PictureFont_64.png" id="62_4347m"]
+[ext_resource type="Texture2D" uid="uid://b12iistxh4swb" path="res://asset/nindot/lms/icon/PictureFont_5D.png" id="62_morxo"]
 [ext_resource type="Texture2D" uid="uid://4r1mncma2e3s" path="res://asset/nindot/lms/icon/PictureFont_65.png" id="63_j0dw2"]
+[ext_resource type="Texture2D" uid="uid://drxyxqfgrvsxk" path="res://asset/nindot/lms/icon/PictureFont_5E.png" id="64_04f2a"]
 [ext_resource type="Texture2D" uid="uid://nkgjnkvukwgo" path="res://asset/nindot/lms/icon/PictureFont_2E.png" id="64_jhbiy"]
+[ext_resource type="Texture2D" uid="uid://bucn44ttpjiwk" path="res://asset/nindot/lms/icon/PictureFont_5F.png" id="65_abcae"]
 [ext_resource type="Texture2D" uid="uid://ccevird7hdgtq" path="res://asset/nindot/lms/icon/PictureFont_2F.png" id="65_d3qkq"]
 [ext_resource type="Texture2D" uid="uid://7ai2w0ygn0xj" path="res://asset/nindot/lms/icon/PictureFont_3A.png" id="67_81642"]
 [ext_resource type="Script" uid="uid://drvem3c5legyc" path="res://scene/editor/msbt/wheel/TagMenuFocusNeighborBuilder.cs" id="73_u0nap"]
@@ -83,15 +87,15 @@ font_size = 17
 font_color = Color(0.741176, 0.556863, 0.215686, 1)
 
 [node name="SubmenuTagPictureFont" type="PanelContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -67.0
+offset_right = 809.0
+offset_bottom = 444.0
 theme = ExtResource("2_bxd02")
 theme_override_styles/panel = ExtResource("3_laewc")
 script = ExtResource("1_2bwnk")
 IsCenterWindow = true
 
 [node name="Scroll" type="ScrollContainer" parent="."]
-custom_minimum_size = Vector2(705, 420)
 layout_mode = 2
 theme = SubResource("Theme_imy0c")
 follow_focus = true
@@ -101,9 +105,11 @@ speed = 3.0
 drag_with_mouse = false
 follow_focus_margin = 80
 force_vertical_scrolling = true
+debug_mode = true
 
 [node name="VBox" type="VBoxContainer" parent="Scroll"]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="HSep_Char" type="HSeparator" parent="Scroll/VBox"]
 layout_mode = 2
@@ -118,6 +124,7 @@ horizontal_alignment = 1
 
 [node name="Character" type="HBoxContainer" parent="Scroll/VBox"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 0
 
 [node name="Char0" type="Button" parent="Scroll/VBox/Character"]
@@ -251,6 +258,14 @@ theme_override_constants/separation = 5
 alignment = 1
 
 [node name="Ico6" type="Button" parent="Scroll/VBox/Icon"]
+layout_mode = 2
+tooltip_text = "PICTURE_FONT_TOOLTIP_IconInsigne_0"
+mouse_filter = 1
+icon = ExtResource("21_l76lg")
+script = ExtResource("8_ebijr")
+IconCode = 63
+
+[node name="Ico12" type="Button" parent="Scroll/VBox/Icon"]
 layout_mode = 2
 tooltip_text = "PICTURE_FONT_TOOLTIP_IconCoin_0"
 mouse_filter = 1
@@ -486,8 +501,10 @@ label_settings = SubResource("LabelSettings_32rks")
 horizontal_alignment = 1
 
 [node name="CC" type="HBoxContainer" parent="Scroll/VBox"]
+custom_minimum_size = Vector2(52.28, 49.11)
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.3
 theme_override_constants/separation = 0
 alignment = 1
 
@@ -602,6 +619,30 @@ mouse_filter = 1
 icon = ExtResource("57_bcw7y")
 script = ExtResource("8_ebijr")
 IconCode = 92
+
+[node name="CC13" type="Button" parent="Scroll/VBox/CC"]
+layout_mode = 2
+tooltip_text = "PICTURE_FONT_TOOLTIP_CoinCollectCarebean_0"
+mouse_filter = 1
+icon = ExtResource("62_morxo")
+script = ExtResource("8_ebijr")
+IconCode = 93
+
+[node name="CC14" type="Button" parent="Scroll/VBox/CC"]
+layout_mode = 2
+tooltip_text = "PICTURE_FONT_TOOLTIP_CoinCollectLuma_0"
+mouse_filter = 1
+icon = ExtResource("64_04f2a")
+script = ExtResource("8_ebijr")
+IconCode = 94
+
+[node name="CC15" type="Button" parent="Scroll/VBox/CC"]
+layout_mode = 2
+tooltip_text = "PICTURE_FONT_TOOLTIP_CoinCollectCloud_0"
+mouse_filter = 1
+icon = ExtResource("65_abcae")
+script = ExtResource("8_ebijr")
+IconCode = 95
 
 [node name="HSep_Treasure" type="HSeparator" parent="Scroll/VBox"]
 layout_mode = 2
@@ -750,6 +791,7 @@ Rows = [NodePath("../Scroll/VBox/Character"), NodePath("../Scroll/VBox/Icon"), N
 [connection signal="SelectedTag" from="Scroll/VBox/Character/Char9" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/Character/Char10" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/Icon/Ico6" to="." method="OnTagSelected"]
+[connection signal="SelectedTag" from="Scroll/VBox/Icon/Ico12" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/Icon/Ico5" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/Icon/Ico9" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/Icon/Ico7" to="." method="OnTagSelected"]
@@ -789,6 +831,9 @@ Rows = [NodePath("../Scroll/VBox/Character"), NodePath("../Scroll/VBox/Icon"), N
 [connection signal="SelectedTag" from="Scroll/VBox/CC/CC10" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/CC/CC11" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/CC/CC12" to="." method="OnTagSelected"]
+[connection signal="SelectedTag" from="Scroll/VBox/CC/CC13" to="." method="OnTagSelected"]
+[connection signal="SelectedTag" from="Scroll/VBox/CC/CC14" to="." method="OnTagSelected"]
+[connection signal="SelectedTag" from="Scroll/VBox/CC/CC15" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/Treasure/Wed0" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/Treasure/Wed1" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/Treasure/Wed2" to="." method="OnTagSelected"]
