@@ -2,6 +2,9 @@ using Godot;
 
 using Nindot.LMS.Msbp;
 using Nindot.LMS.Msbt;
+using Nindot.LMS.Msbt.TagLib;
+using System;
+using System.Diagnostics;
 
 namespace MoonFlow.Scene.EditorMsbt;
 
@@ -79,7 +82,20 @@ public partial class MsbtPageEditor : TextEdit
         Text = "";
         foreach (var item in Page)
         {
-            if (item.IsText())
+            if (item is MsbtTextElement text)
+                Debug.WriteLine("Text: " + text.GetText());
+            else if (item is MsbtTagElement tag)
+            {
+                var hex = tag.GetGroupName();
+                
+                Debug.WriteLine("Tag: " + hex);
+            }
+
+            else
+                Debug.WriteLine("Unknown item: " + item.GetType().Name);
+        
+
+        if (item.IsText())
                 Text += item.GetText();
             else
                 Text += '\u2E3A';

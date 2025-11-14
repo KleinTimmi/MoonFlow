@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://bbwcbxape7kyt"]
+[gd_scene load_steps=81 format=3 uid="uid://bbwcbxape7kyt"]
 
 [ext_resource type="Script" uid="uid://q76cug4d3jch" path="res://scene/editor/msbt/wheel/picture/TagSubmenuPictureFont.cs" id="1_2bwnk"]
 [ext_resource type="Theme" uid="uid://bbndf5ewp2sd1" path="res://asset/theme/msbt/msbt_editor_theme.tres" id="2_bxd02"]
@@ -75,6 +75,7 @@
 [ext_resource type="Texture2D" uid="uid://nkgjnkvukwgo" path="res://asset/nindot/lms/icon/PictureFont_2E.png" id="64_jhbiy"]
 [ext_resource type="Texture2D" uid="uid://bucn44ttpjiwk" path="res://asset/nindot/lms/icon/PictureFont_5F.png" id="65_abcae"]
 [ext_resource type="Texture2D" uid="uid://ccevird7hdgtq" path="res://asset/nindot/lms/icon/PictureFont_2F.png" id="65_d3qkq"]
+[ext_resource type="Texture2D" uid="uid://cmsp33jmajm8l" path="res://asset/nindot/lms/icon/PictureFont_66.png" id="66_04f2a"]
 [ext_resource type="Texture2D" uid="uid://7ai2w0ygn0xj" path="res://asset/nindot/lms/icon/PictureFont_3A.png" id="67_81642"]
 [ext_resource type="Script" uid="uid://drvem3c5legyc" path="res://scene/editor/msbt/wheel/TagMenuFocusNeighborBuilder.cs" id="73_u0nap"]
 
@@ -88,7 +89,7 @@ font_color = Color(0.741176, 0.556863, 0.215686, 1)
 
 [node name="SubmenuTagPictureFont" type="PanelContainer"]
 offset_left = -67.0
-offset_right = 809.0
+offset_right = 860.0
 offset_bottom = 444.0
 theme = ExtResource("2_bxd02")
 theme_override_styles/panel = ExtResource("3_laewc")
@@ -644,6 +645,14 @@ icon = ExtResource("65_abcae")
 script = ExtResource("8_ebijr")
 IconCode = 95
 
+[node name="CC16" type="Button" parent="Scroll/VBox/CC"]
+layout_mode = 2
+tooltip_text = "PICTURE_FONT_TOOLTIP_CoinCollectMoonDarker_0"
+mouse_filter = 1
+icon = ExtResource("66_04f2a")
+script = ExtResource("8_ebijr")
+IconCode = 102
+
 [node name="HSep_Treasure" type="HSeparator" parent="Scroll/VBox"]
 layout_mode = 2
 mouse_filter = 1
@@ -834,6 +843,7 @@ Rows = [NodePath("../Scroll/VBox/Character"), NodePath("../Scroll/VBox/Icon"), N
 [connection signal="SelectedTag" from="Scroll/VBox/CC/CC13" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/CC/CC14" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/CC/CC15" to="." method="OnTagSelected"]
+[connection signal="SelectedTag" from="Scroll/VBox/CC/CC16" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/Treasure/Wed0" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/Treasure/Wed1" to="." method="OnTagSelected"]
 [connection signal="SelectedTag" from="Scroll/VBox/Treasure/Wed2" to="." method="OnTagSelected"]

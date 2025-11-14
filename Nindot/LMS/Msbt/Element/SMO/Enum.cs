@@ -162,6 +162,7 @@ public enum IconCodePictureFont : ushort
     CoinCollectCarebean = 0x5D,
     CoinCollectLuma = 0x5E,
     CoinCollectCloud = 0x5F,
+    CoinCollectMoonDarker = 0x66,
 
     TreasureRing = 0x60,
     TreasureFlower = 0x61,
